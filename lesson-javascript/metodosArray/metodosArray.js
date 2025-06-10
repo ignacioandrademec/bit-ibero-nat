@@ -33,7 +33,7 @@
 
 /* -------------------------------------------- METODO SPLICE ---------------------*/
 
-// shift()  /* Elimina el primer elemento de la lista */
+// 
 
 
 
