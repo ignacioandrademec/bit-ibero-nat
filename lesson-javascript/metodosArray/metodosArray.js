@@ -358,12 +358,3 @@ estudiantesCurso1110.unshift("Arturo Bohorquez", "Ellon Musk", "Pepa Pig")
 
 
 
-
-
-
-
-
-// TODO 
-//! COMENTARIO DE ADVERTENCIA
-//* COMENTARIO BRILLANTE
-//? COMENTARIO PREGUNTA
