@@ -304,22 +304,6 @@ console.log("El total de puntos es: ", totalPuntos);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // TODO -------------------------------------------- TAREA PENDIENTE PARA PRACTICAR-------
 
 /* Usar un ejemplo con los diferentes metodos Array */
