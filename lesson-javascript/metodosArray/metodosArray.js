@@ -161,6 +161,156 @@ let frutasReemplazadas = miCanasta4.splice(1,2,"Lulo", "Papaya", "Melón");
 console.log("Mi Canasta4: ", miCanasta4);
 
 
+// ? ------------------------------------- METODO SORT  -------------------------------------
+
+/* El metodo SORT, organiza los elementos de un arreglo */
+
+let listaAlumnos = ["Victor", "Luisa", "Sebastian", "Horacio"];
+console.log("Lista de Alumnos: ", listaAlumnos);
+
+listaAlumnos.sort(); //Organiza en orden Alfabéticamente, 
+console.log(listaAlumnos)
+
+let listaNumeros = [10,2,3,6,3,8,3,1,9,23]; 
+listaNumeros.sort();
+console.log("Lista de numeros sin ordenar:", listaNumeros); // Para los números no los toma por que los tomo como letras
+
+// ! ---------------------------------------------- Como organizar los números de < a >-------
+
+listaNumeros.sort(function(a,b){
+    return a-b; // El valida si a es mas pequeño que b, da un número negativo y si a es mayor que b da un numero positivo, si ponemos b-a dice internamente, si b es mas grande que a el resutlado es positivo.
+
+    // 1-10=-9, cuando la repsuesta dio negativo, le decimos a la maquina que a es antes que b.
+})
+
+console.log("Lista de numeros menor a mayor:", listaNumeros);
+
+// ! ---------------------------------------------- Como organizar los números de > a <-------
+
+listaNumeros.sort(function(a,b){
+    return b-a;
+})
+
+console.log("Lista de numeros mayor a menor:", listaNumeros);
+
+// ? ----------------------------------------- REVERSE ---------------------------------------
+
+/* Invierte el orden de los elementos de un array */
+
+let listaNumeros2 = [1,2,3,4,5,6,7,8,9]
+console.log("Lista de Números en orden: ", listaNumeros2);
+
+listaNumeros2.reverse();
+console.log("Lista de Números al revez o en espejo: ", listaNumeros2);
+
+
+
+// ? ----------------------------------------- FOREACH ----------------------------------------
+
+/* Ejecuta una función para cada elemento del Array */
+
+let tareasDelDía = ["sacar la basura", "tender la cama", "lavar los platos"];
+
+tareasDelDía.forEach(function(tarea){
+    console.log("He revisado la tarea", tarea);
+})
+
+
+// ? ----------------------------------------- MAP -------------------------------------------
+
+/* Crea un nuevo array con los resultados de lo que le dije que hiciera en dicha función y mantiene el array original */
+
+let puntuacionesExamen = [80,45,90,60,70];
+console.log("Puntuciónes Originales: ", puntuacionesExamen);
+
+let mensajeDeAprobacion = puntuacionesExamen.map(function(puntuacion){
+    if(puntuacion >=60){
+        return "Aprobado con" + puntuacion
+    }else{
+        return "Reprobado con " + puntuacion
+    }
+})
+
+console.log(mensajeDeAprobacion)
+
+// ? ----------------------------------------- FILTER -----------------------------------------
+
+/* Crea un nuevo array con todos los elementos que pasan la prueba implementada por la funcion que se le indico */
+
+let rangosEmpleado = [
+    {
+        nombre: "Andrea", rango: "admin"
+    },{
+        nombre: "Cristian", rango: "user"
+    },{
+        nombre: "Diana", rango: "admin"
+    },{
+        nombre: "Horacio", rango: "user"
+    },{
+        nombre: "Jaderson", rango: "admin"
+    }
+];
+
+let administradores = rangosEmpleado.filter(function(roll){
+    return roll.rango === "admin";
+});
+
+console.log("Los administradores son: " , administradores);
+
+// ! ---------------------------------------------- Ejercicio de FILTER -----------------
+
+let listaNum = [20,9,56,8,10,11];
+
+let filtro = listaNum.filter(function(i){
+    return i <= 12;
+})
+
+console.log("Los números menores o iguales a 12 son: ", filtro);
+
+
+
+// ? ----------------------------------------- REDUCE -----------------------------------------
+
+/* Aplica una función a un acomulador al valor del array, esto lo hace de izq a der, ésto para reducirlo a un unico valor*/
+
+// ! ---------------------------------------------- EJEMPLO 1 ----------------------------
+
+
+let palabras = ["Hola", "Mundo", "desde", "JavaScript"];
+console.log("Palabras Separadas: ", palabras);
+
+let fraseCompleta = palabras.reduce(function(fraseConstruida, palabraActual){
+    return fraseConstruida + " " + palabraActual;
+});
+
+console.log("La frase completa es: ", fraseCompleta);
+
+// ! ---------------------------------------------- EJEMPLO 2 ----------------------------
+
+let num2 = [100, 75, 120, 90, 50];
+
+console.log("Puntuaciones de Cada Nivel", num2);
+
+let totalPuntos = num2.reduce(function(acomulador, puntuacionActual){
+    console.log(`Sumando ${acomulador} (lo que llevo) + ${puntuacionActual}(lo que acabo de encontrar)`);
+
+    return acomulador + puntuacionActual;
+
+},0)
+
+console.log("El total de puntos es: ", totalPuntos);
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
