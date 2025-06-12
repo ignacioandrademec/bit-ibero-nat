@@ -136,7 +136,7 @@ console.log("Mi Nueva Canasta: ", miCanasta);
 let miCanasta2 = ["Manzana" /*0*/, "Pera"/*1*/, "Uva"/*2*/, "Banana"/*3*/, "Kiwi"/*4*/];
 console.log("Mi Canasta2: ", miCanasta2);
 
-let quitarFrutas2 = miCanasta2.splice(1,3)  // Desde el indice 1 hatsa el indice 3
+let quitarFrutas2 = miCanasta2.splice(1,3)  // Desde el indice 1 hasta el indice 3
 console.log("Mi Nueva Canasta2: ", miCanasta2);
 
 // !-------------------------------------------------------------- AGREGAR --------------
@@ -457,6 +457,146 @@ let amigosMedio = filaAmigos.slice(1,3);
 console.log("Los amigos del medio son: ", amigosMedio);
 
 
+
+// ? ----------------------------------------- MATH.RANDOM ----------------------------------
+/* Genera Numeros en aleatorio */
+
+console.log("Juego de Adivine el número secreto");
+
+let numeroSecreto = Math.floor(Math.random()*10);
+console.log("El número secreto es: ",numeroSecreto)
+
+// ? ----------------------------------------- MATH.FLOOR ----------------------------------
+/* Redondea Hacia ABAJO como por ejemplo: Math.floor(5.8) es 5*/
+
+let gramosChocolate = 287.5;
+let pesoBarra = 100;
+
+let numeroBarras = Math.floor(gramosChocolate/pesoBarra);
+console.log("El número de barras seria: ",numeroBarras);
+
+// ? ----------------------------------------- MATH.CEIL ----------------------------------
+/* Redondea Hacia ARRIBA como por ejemplo: Math.ceil(5.2) es 6*/
+
+/* 10 Bombillas y necesitamos 37 bombillas */
+
+let bombillasNecesarias = 37;
+let bombillasCaja = 10;
+
+/* Calculamos cuantas cajas necesitamos */
+
+let cajasComprar = Math.ceil (bombillasNecesarias/bombillasCaja);
+console.log("Las cajas por comprar son: ",cajasComprar);
+
+
+// ? ----------------------------------------- MATH.ROUND----------------------------------
+/* Redondea al mas cercano:
+Math.round(5.2) = 5
+Math.round(5.7) = 6
+*/
+
+// ? ----------------------------------------- MATH.ABS ----------------------------------
+/* Redondea al Valor absouto:
+Math.abs(-5) = 5
+Math.abs(6) = 6
+*/
+
+// ? ----------------------------------------- MATH.MAX ----------------------------------
+/* 
+Math.max(6, 20, 35, 5, 48) = 48
+*/
+
+let numeros1 = (6, 20, 35, 5, 48);
+let numerosMasGrande = Math.max(numeros1);
+console.log("El número mas grande es: ", numerosMasGrande);
+
+// ? ----------------------------------------- MATH.MIN ----------------------------------
+/* 
+Math.max(6, 20, 35, 5, 48) = 48
+*/
+
+let tiempo1 = 14.8;
+let tiempo2 = 5.8;
+let tiempo3 = 7.9;
+let tiempo4 = 1.3;
+
+let tiempoMinimo = Math.min(tiempo1, tiempo2, tiempo3, tiempo4);
+console.log("El tiempo minimo es: ", tiempoMinimo);
+
+// ? ----------------------------------------- MATH.POW ----------------------------------
+/* 
+Math.pow(2,3) = 2*2*2 = 8
+area = (lado*lado) o lado2
+*/
+
+let ladocuadrado = 7;
+
+let areacuadrado = Math.pow(ladocuadrado, 2);
+console.log("El area del cuadrado es: ", areacuadrado);
+
+
+// ? ----------------------------------------- MATH.SQRT ----------------------------------
+/* 
+RAIZ COMPLETAR
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // TODO -------------------------------------------- EJERCICIO EN CLASE - ARREGLOS -------
 
 // ! -------- GESTIÓN DE UNA COLECCIÓN DE LIBROS -----------------------------------------
@@ -489,7 +629,7 @@ ELIMINAR LIBROS:
 
 ACTUALIZAR / MODIFICAR LIBROS:
 
-- Inserta un nuevo libro en una posición específica del array sin reemplazar un exisitente.
+- Inserta un nuevo libro en una posición específica del array sin reemplazar un existente.
 - Reemplaza uno o mas libros en una posición especifica del array.
 
 CONSULTA Y FILTRADO:
@@ -585,13 +725,63 @@ console.log("Busqueda del libro con id:3 el indice es =>", buscarId);
 
 
 // ! -------- ELIMINA EL LIBRO POR SU ID ------------------------------------------------
+/* En la posición de indice 2 elimino 1 elemento */
+
+let quitarid3 = coleccion.splice(2,1)  //
+console.log("Mi nueva Colección es: ", quitarid3);
+
+console.log(coleccion);
+
+// ! -------- INSERTANDO UN NUEVO LIBRO EN LA POSICIÓN 3 ----------------------------------
+/* En la posición 3 agrego 1 libro pero pongo el 0 para que no elimine ninguno */
+
+let agregarLibros = coleccion.splice(3,0,
+    {
+    id: 8,
+    titulo: "Rayuela",
+    autor: "Julio Cortázar",
+    añoPublicacion: "1963",
+    genero: "Ficción",
+    disponible: true
+    }
+);
+
+console.log("Mi nueva colección agregando el libro id:8 queda: ", coleccion);
 
 
+// ! -------- REEMPLAZANDO 1 LIBRO POR 3 ---------------------------------------------
+/* En la posición 3 quiero insertar 3 libros y elimnar 1*/
 
+let eliminaAgregaLibros = coleccion.splice(3,1, 
+    {
+    id: 9,
+    titulo: "La sombra del viento",
+    autor: "Carlos Ruiz Zafón",
+    añoPublicacion: "2001",
+    genero: "Misterio",
+    disponible: true
+    },
+    {
+    id: 10,
+    titulo: "Don Quijote de la Mancha",
+    autor: "Miguel de Cervantes",
+    añoPublicacion: "1605",
+    genero: "Clásico",
+    disponible: false
+    },
+    {
+    id: 11,
+    titulo: "Crónica de una muerte anunciada",
+    autor: "Gabriel García Márquez",
+    añoPublicacion: "1981",
+    genero: "Realismo mágico",
+    disponible: true
+    }
+);
 
+console.log("Reemplazando 1 libro para ubicar 3 mas quedando mi colección así: ", coleccion);
 
-
-
+// ! -------- CREANDO UNA COLECCIÓN NUEVA - ---------------------------------------------
 
 
 
