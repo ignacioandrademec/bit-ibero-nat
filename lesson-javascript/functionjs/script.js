@@ -78,14 +78,22 @@ console.log("Factorial: ", factorial(6));
 
 
 
+// ! Ejercicio en clase de Funciones:
+
+/* Realizar una función que tome un array de numeros y devuelva la suma de ellos*/
 
 
+function sumarArray (arreglo){
+    let suma = 0;
+    for (let i = 0; i < arreglo.length; i++) {
+        suma += arreglo[i];   // += => suma = suma + arreglo[1]
+    }
+    console.log("La suma del Array es: " + suma);
+}
 
+let arregloNum = [2,5,4,3,6,7,8,9];
 
-
-
-
-
+sumarArray(arregloNum);
 
 
 
